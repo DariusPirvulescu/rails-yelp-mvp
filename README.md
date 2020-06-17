@@ -22,3 +22,15 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Models
+Schema
+A restaurant has a name, an address, a phone number, a category (chinese, italian…)
+and many reviews
+A review has content (the text), a rating (between 0 and 5) and references a restaurant
+Question: Can you draw this simple schema at db.lewagon.com? Discuss with your buddy.
+
+rails g model restaurant name:string address:string, phone:integer category:string
+
+rails g model review content:text rating:integer restaurant:references
