@@ -4,10 +4,15 @@
         <tr><td>Adress --- <h3><%= @restaurant.address %></h3></td></tr>
         <tr><td>Phone --- <h3><%= @restaurant.phone_number %></h3></td></tr>
         <tr><td>Category --- <h3><%= @restaurant.category %></h3></td></tr>
-        <!-- <tr>linkTo</tr>
-        <tr>LinkEdit</tr>
-        <tr>LinkDestroy</tr> -->
+        <td><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></td>
   </tbody>
 </table>
 
 <%= link_to "Restaurants list", restaurants_path %>
+
+<% @restaurant.reviews.each do |r|%>
+<div>
+  <div><%= r.rating %> 🌟</div>
+  <div><%= r.content %></div></tr>
+</div>
+<% end %>
