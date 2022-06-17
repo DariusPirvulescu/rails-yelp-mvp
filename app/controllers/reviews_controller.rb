@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
       if @review.save
         format.html { redirect_to @restaurant, notice: "yes" }
         # redirect_to @restaurant
-        format.js { render false ? :custom_create : :create }
+        format.js { render :create }
       else
         format.html { render action: new }
         format.js 
