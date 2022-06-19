@@ -4,7 +4,23 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    begin
+      @restaurant = Restaurant.find(params[:id])    
+    rescue => exception
+      puts "SAD"
+    end
+    
+    if @restaurant 
+      respond_to do |format|
+        format.html
+        format.json { render :json => @restaurant }
+      end
+    else
+      # render status: 404
+      # head :not_found
+      render :file => 'public/404.html', :status => :not_found, :layout => false
+    end
+    
   end
 
   def new
