@@ -15,7 +15,7 @@
 
 <% @restaurant.reviews.each do |review| %>
   <%= turbo_frame_tag review do %>
-    <div class="my-4 border-2">
+    <div class="my-4">
       <div>
         <%= review.rating %> 🌟
         <%= link_to 'edit review', edit_review_path(review)%>
