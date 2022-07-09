@@ -4,3 +4,4 @@
 # Use npm packages from a JavaScript CDN by running ./bin/importmap
 
 pin "application"
+pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
