@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root :to => "pages#home"
   resources :restaurants, only: [:index, :show, :new, :create] do
-    resources :reviews, shallow: true
+    resources :reviews, except: [:index, :show, :destroy], shallow: true
   end
 end
