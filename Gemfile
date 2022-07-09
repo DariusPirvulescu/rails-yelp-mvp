@@ -28,6 +28,8 @@ gem 'redis', '~> 4.0'
 
 gem 'jquery-rails'
 
+gem 'importmap-rails'
+
 # https://github.com/hotwired/turbo-rails
 gem "turbo-rails"
 
