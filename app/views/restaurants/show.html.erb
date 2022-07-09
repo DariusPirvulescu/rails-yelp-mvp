@@ -10,9 +10,13 @@
 
 <%= link_to "Restaurants list", restaurants_path %>
 
-<% @restaurant.reviews.each do |r|%>
-<div>
-  <div><%= r.rating %> 🌟</div>
-  <div><%= r.content %></div></tr>
-</div>
+<% @restaurant.reviews.each do |review|%>
+  <div class="my-4">
+    <div>
+      <%= review.rating %> 🌟
+      <%= link_to 'edit review', edit_review_path(review) %>
+    </div>
+    <div><%= review.content %></div>
+    <hr>
+  </div>
 <% end %>
