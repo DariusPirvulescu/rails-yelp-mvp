@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 
 module RailsYelpMvp
   class Application < Rails::Application
+    attr_accessor :importmap
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 

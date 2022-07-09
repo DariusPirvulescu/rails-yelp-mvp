@@ -1,0 +1,10 @@
+<%= turbo_frame_tag review do %>
+    <div class="my-4">
+      <div>
+        <%= review.rating %> 🌟
+        <%= link_to 'edit review', edit_review_path(review)%>
+      </div>
+      <div><%= review.content %></div>
+      <hr>
+    </div>
+  <% end %>

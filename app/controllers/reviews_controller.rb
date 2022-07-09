@@ -18,7 +18,6 @@ class ReviewsController < ApplicationController
       else
         format.html { render action: new }
         format.js 
-        # render :new
       end
     end
   end
@@ -27,7 +26,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = @review.restaurant
     if @review.update(review_params)
       redirect_to @restaurant, notice: "Review was successfully updated."
     else
