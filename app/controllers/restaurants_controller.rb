@@ -12,8 +12,8 @@ class RestaurantsController < ApplicationController
     
     if @restaurant 
       respond_to do |format|
-        format.json { render :json => @restaurant }
         format.html
+        format.json { render :json => @restaurant }
       end
     else
       # render status: 404
