@@ -1,5 +1,6 @@
-<h1>New Restaurant</h1>
+<%= turbo_frame_tag id="new-restaurant" do %>
+  <h1 class="mt-4" >Create New Restaurant</h1>
 
-<%= render 'form', restaurant: @restaurant %>
-
+  <%= render 'form', restaurant: @restaurant %>
+<% end %>
 <%= link_to 'Back', restaurants_path %>
