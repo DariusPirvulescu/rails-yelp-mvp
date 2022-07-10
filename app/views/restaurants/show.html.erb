@@ -9,6 +9,9 @@
 </table>
 
 <%= link_to "Restaurants list", restaurants_path %>
-<hr>
-<h2>Reviews</h2>
+<% if @restaurant.reviews.any? %>
+  <hr>
+  <h3>Reviews</h3>
+<% end %>
+
 <%= render @restaurant.reviews %>
