@@ -24,6 +24,6 @@
   </tbody>
 </table>
 
-<%= link_to "Create new restaurant", new_restaurant_path %>
+<%= link_to "Create new restaurant", new_restaurant_path, data: { turbo_frame: "new-restaurant" } %>
 
-<%= turbo_frame_tag id="new-restaurant", src: new_restaurant_path %>
+<%= turbo_frame_tag id="new-restaurant" %>
