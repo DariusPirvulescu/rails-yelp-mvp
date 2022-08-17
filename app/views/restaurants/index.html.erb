@@ -1,6 +1,6 @@
 <h1>Restaurants</h1>
 
-<table>
+<table id="restaurants">
   <thead>
     <tr>
       <th>Name</th>
@@ -12,16 +12,10 @@
   </thead>
 
   <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone_number %></td>
-        <td><%= restaurant.category %></td>
-        <td><%= link_to "view", restaurant %></td>
-      </tr>
-    <% end %>
+    <%= render @restaurants %>
   </tbody>
 </table>
 
-<%= link_to "Create new restaurant", new_restaurant_path %>
+<%= link_to "Create new restaurant", new_restaurant_path, data: { turbo_frame: "new-restaurant" } %>
+
+<%= turbo_frame_tag id="new-restaurant" %>

@@ -16,6 +16,7 @@ class RestaurantsController < ApplicationController
         format.json { render :json => @restaurant }
       end
     else
+      #Alternative
       # render status: 404
       # head :not_found
       render :file => 'public/404.html', :status => :not_found, :layout => false
@@ -29,10 +30,15 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
-    if @restaurant.save
-      redirect_to @restaurant
-    else
-      render :new
+    respond_to do |format|
+      if @restaurant.save
+        # redirect_to @restaurant
+        format.turbo_stream
+      else
+        #Alternative
+        # render :new
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
