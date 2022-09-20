@@ -4,6 +4,9 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
   # validates :category, inclusion: { in: %w[chinese italian japanese french belgian] }
+
+  # Use enums to validate
+  # https://api.rubyonrails.org/v5.1/classes/ActiveRecord/Enum.html
   enum category: {
     chinese: 'ch',
     italian: 'it',
