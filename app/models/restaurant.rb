@@ -3,16 +3,16 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :category, presence: true
-  # validates :category, inclusion: { in: %w[chinese italian japanese french belgian] }
+  validates :category, inclusion: { in: %w[chinese italian japanese french belgian] }
 
-  # Use enums to validate
-  # https://api.rubyonrails.org/v5.1/classes/ActiveRecord/Enum.html
-  enum category: {
-    chinese: 'ch',
-    italian: 'it',
-    japanese: 'ja',
-    belgian: 'be'
-  }
+  # # Use enums to validate
+  # # https://api.rubyonrails.org/v5.1/classes/ActiveRecord/Enum.html
+  # enum category: {
+  #   chinese: 'ch',
+  #   italian: 'it',
+  #   japanese: 'ja',
+  #   belgian: 'be'
+  # }
 
   # Used by to_json to only return the some chosen attributes
   # https://api.rubyonrails.org/classes/ActiveModel/Serializers/JSON.html#method-i-as_json
