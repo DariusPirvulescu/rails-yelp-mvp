@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])    
     rescue => exception
       puts "SAD"
+      raise @restaurant.inspect
     end
     
     if @restaurant 
